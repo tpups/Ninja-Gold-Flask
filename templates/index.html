@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <title>Ninja Money</title>
+    </head>
+    <body>
+        <div class="gold">
+            <h4>Your Gold:</h4>
+            {{ session['yourGold'] }}
+        </div>
+        <div class="locations">
+            <div class="farm">
+                <h2>Farm</h2>
+                <h4>(earns 10-20 gold)</h4>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="location" value="farm" />
+                    <input type="submit" value="Find Gold!" class="goldbutt"/>
+                </form>
+            </div>
+            <div class="cave">
+                <h2>Cave</h2>
+                <h4>(earns 5-10 gold)</h4>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="location" value="cave" />
+                    <input type="submit" value="Find Gold!" class="goldbutt"/>
+                </form>
+            </div>
+            <div class="house">
+                <h2>House</h2>
+                <h4>(earns 2-5 gold)</h4>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="location" value="house" />
+                    <input type="submit" value="Find Gold!" class="goldbutt"/>
+                </form>
+            </div>
+            <div class="casino">
+                <h2>Casino</h2>
+                <h4>(earns/takes 0-50 gold)</h4>
+                <form action="/process_money" method="post">
+                    <input type="hidden" name="location" value="casino" />
+                    <input type="submit" value="Gamble!" class="goldbutt"/>
+                </form>
+            </div>
+        </div>
+        <h4>Activities:</h4>
+        <div class="activities">
+            {% for string in session['activityLog'] %}
+                {{ string|escape }}
+            {% endfor %}
+        </div>
+        <div class="startOver">
+            <form action="/process_money" method="post">
+                <input type="hidden" name="location" value="start_over"/>
+                <input type="submit" value="Start Over" class="goldbutt"/>
+            </form>
+        </div>
+    </body>
+</html>

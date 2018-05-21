@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.gold{
+    border: 1px solid black;
+    height: 30px;
+    width: 150px;
+    margin-top: 75px;
+    margin-left: 80px;
+    margin-bottom: 20px;
+}
+
+.gold h4{
+    display: inline-block;
+    margin-left: -80px;
+    line-height: 30px;
+}
+
+.locations{
+    margin-bottom: 40px;
+}
+
+.farm{
+    display: inline-block;
+    border: 1px solid green;
+    width: 165px;
+    height: 75px;
+}
+
+.cave{
+    display: inline-block;
+    border: 1px solid purple;
+    width: 165px;
+    height: 75px;
+}
+
+.house{
+    display: inline-block;
+    border: 1px solid red;
+    width: 165px;
+    height: 75px;
+}
+
+.casino{
+    display: inline-block;
+    border: 1px solid gold;
+    width: 165px;
+    height: 75px;
+}
+
+.activities{
+    border: 1px solid blue;
+    width: 600px;
+    height: 175px;
+    overflow-y: scroll;
+}
+
+.goldbutt{
+    cursor: pointer;
+}
